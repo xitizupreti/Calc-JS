@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <style>
+        body{
+            margin-left:25%;
+
+        }
+        table{
+            border-collapse: collapse;
+            height: 400px;
+            width: 400px;
+            table-layout: fixed;
+            text-align: center;
+        }
+        tr,td{
+            border: 2px solid black;
+        width: 10%;
+        }
+        #text{
+            height: 100px;
+            width: 395px;
+            background-color: black;
+           color: cornsilk;
+           font-weight: bolder;
+           font-size: 20px;
+           
+        }
+        textarea{
+        resize:none;
+        text-align:center;
+        }
+        input{
+            background-color:transparent;
+            height:100%;
+            width: 100%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           font-size:larger;
+        }
+    </style>
+    <script>
+        function clr(){
+            document.getElementById("text").value="";
+        }
+        function dis(v){
+            document.getElementById("text").value+=v;
+        }
+        function sol(){
+            var x = document.getElementById("text").value;
+            var y = eval(x);
+            document.getElementById("text").value = y;
+        }
+    </script>
+</head>
+<body>
+    <div >
+       <table>
+        <textarea id="text" type="text" placeholder="Enter Here! "></textarea>
+            <tr style="background-color: chocolate;">
+                <td><input type="button" value="+" onclick="dis('+')"></td>
+                <td><input type="button" value="-" onclick="dis('+')"></td>
+                <td><input type="button" value="&times" onclick="dis('*')"></td>
+                <td><input type="button" value="&divide" onclick="dis('/')"></td>
+            </tr>
+            <tr style="background-color: darkgrey;">
+                <td><input type="button" value="7" onclick="dis('7')"></td>
+                <td><input type="button" value="8" onclick="dis('8')"></td>
+                <td><input type="button" value="9" onclick="dis('9')"></td>
+                <td rowspan="4" style="background-color: crimson;"><input type="button" value="=" onclick="sol()"></td>
+            </tr>
+            <tr  style="background-color: darkgrey;">
+                <td><input type="button" value="4" onclick="dis('4')"></td>
+                <td><input type="button" value="5" onclick="dis('5')"></td>
+                <td><input type="button" value="6" onclick="dis('6')"></td>
+            </tr>
+            <tr  style="background-color: darkgrey;">
+                <td><input type="button" value="1" onclick="dis('1')"></td>
+                <td><input type="button" value="2" onclick="dis('2')"></td>
+                <td><input type="button" value="3" onclick="dis('3')"></td>
+            </tr>
+            <tr  style="background-color: darkgrey;">
+                <td><input type="button" value="0" onclick="dis('0')"></td>
+                <td><input type="button" value="." onclick="dis('.')"></td>
+                <td><input type="button" value="AC" onclick="clr()"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

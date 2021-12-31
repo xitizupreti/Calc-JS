@@ -53,13 +53,17 @@
             var x = document.getElementById("text").value;
             var y = eval(x);
             document.getElementById("text").value = y;
-        }
+        } 
+        function Del() {
+    var value = document.getElementById("text").value;
+    document.getElementById("text").value = value.substr(0, value.length - 1);
+}    
     </script>
 </head>
 <body>
     <div >
        <table>
-        <textarea id="text" type="text" placeholder="Enter Here! "></textarea>
+        <textarea id="text" type="text" onkeydown="return false" placeholder="Enter Here! "></textarea>
             <tr style="background-color: chocolate;">
                 <td><input type="button" value="+" onclick="dis('+')"></td>
                 <td><input type="button" value="-" onclick="dis('+')"></td>
@@ -70,12 +74,14 @@
                 <td><input type="button" value="7" onclick="dis('7')"></td>
                 <td><input type="button" value="8" onclick="dis('8')"></td>
                 <td><input type="button" value="9" onclick="dis('9')"></td>
-                <td rowspan="4" style="background-color: crimson;"><input type="button" value="=" onclick="sol()"></td>
+                <td><input type="button" value="Del" onclick="Del()"></td>
             </tr>
             <tr  style="background-color: darkgrey;">
                 <td><input type="button" value="4" onclick="dis('4')"></td>
                 <td><input type="button" value="5" onclick="dis('5')"></td>
                 <td><input type="button" value="6" onclick="dis('6')"></td>
+                <td rowspan="3" style="background-color: crimson;"><input type="button" value="=" onclick="sol()"></td>
+
             </tr>
             <tr  style="background-color: darkgrey;">
                 <td><input type="button" value="1" onclick="dis('1')"></td>

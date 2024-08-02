@@ -120,12 +120,19 @@
           "-",
           "*",
           "/",
+          ".",
+          "(",
+          ")",
           "Backspace",
           "Delete",
           "ArrowLeft",
           "ArrowRight",
+          "Enter",
         ];
-        if (!allowedKeys.includes(event.key)) {
+        if (event.key === "Enter") {
+          sol();
+          event.preventDefault();
+        } else if (!allowedKeys.includes(event.key)) {
           event.preventDefault();
         }
       }
@@ -135,7 +142,6 @@
     <table>
       <textarea
         id="text"
-        readonly
         placeholder="Enter Here!"
         onkeydown="filterInput(event)"
       ></textarea>

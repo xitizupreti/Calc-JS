@@ -28,15 +28,12 @@
       }
       #text {
         height: 100px;
-        width: 100%;
+        width: 400px;
         background-color: black;
         color: cornsilk;
         font-weight: bolder;
         font-size: 20px;
         text-align: center;
-      }
-      textarea {
-        resize: none;
       }
       input {
         background-color: transparent;
@@ -152,33 +149,35 @@
         <td><input type="button" value="7" onclick="dis('7')" /></td>
         <td><input type="button" value="8" onclick="dis('8')" /></td>
         <td><input type="button" value="9" onclick="dis('9')" /></td>
-        <td><input type="button" value="Del" onclick="Del()" /></td>
+        <td rowspan="2"><input type="button" value="Del" onclick="Del()" /></td>
       </tr>
       <tr class="darkgrey">
         <td><input type="button" value="4" onclick="dis('4')" /></td>
         <td><input type="button" value="5" onclick="dis('5')" /></td>
         <td><input type="button" value="6" onclick="dis('6')" /></td>
-        <td rowspan="3" style="background-color: crimson">
-          <input type="button" value="=" onclick="sol()" />
-        </td>
       </tr>
       <tr class="darkgrey">
         <td><input type="button" value="1" onclick="dis('1')" /></td>
         <td><input type="button" value="2" onclick="dis('2')" /></td>
         <td><input type="button" value="3" onclick="dis('3')" /></td>
+        <td rowspan="2"><input type="button" value="AC" onclick="clr()" /></td>
       </tr>
       <tr class="darkgrey">
         <td><input type="button" value="0" onclick="dis('0')" /></td>
         <td><input type="button" value="." onclick="dis('.')" /></td>
-        <td><input type="button" value="AC" onclick="clr()" /></td>
+        <td><input type="button" value="C" onclick="clr()" /></td>
       </tr>
       <tr class="darkgrey">
         <td><input type="button" value="√" onclick="sqrt()" /></td>
         <td><input type="button" value="%" onclick="percent()" /></td>
         <td><input type="button" value="±" onclick="changeSign()" /></td>
-        <td><input type="button" value="M+" onclick="memoryStore()" /></td>
+        <td rowspan="2" style="background-color: crimson">
+          <input type="button" value="=" onclick="sol()" />
+        </td>
       </tr>
       <tr class="darkgrey">
+        <td><input type="button" value="M+" onclick="memoryStore()" /></td>
+
         <td><input type="button" value="MR" onclick="memoryRecall()" /></td>
         <td><input type="button" value="MC" onclick="memoryClear()" /></td>
         <td colspan="2"></td>

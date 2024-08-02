@@ -61,19 +61,86 @@
         document.getElementById("text").value += v;
       }
       function sol() {
-        document.getElementById("text").value = eval(
-          document.getElementById("text").value
-        );
+        try {
+          document.getElementById("text").value = eval(
+            document.getElementById("text").value
+          );
+        } catch (e) {
+          document.getElementById("text").value = "Error";
+        }
       }
       function Del() {
         let value = document.getElementById("text").value;
         document.getElementById("text").value = value.slice(0, -1);
       }
+
+      function sqrt() {
+        try {
+          document.getElementById("text").value = Math.sqrt(
+            eval(document.getElementById("text").value)
+          );
+        } catch (e) {
+          document.getElementById("text").value = "Error";
+        }
+      }
+      function percent() {
+        try {
+          document.getElementById("text").value =
+            eval(document.getElementById("text").value) / 100;
+        } catch (e) {
+          document.getElementById("text").value = "Error";
+        }
+      }
+      function changeSign() {
+        document.getElementById("text").value =
+          eval(document.getElementById("text").value) * -1;
+      }
+      function memoryStore() {
+        memory = eval(document.getElementById("text").value);
+        document.getElementById("text").value = "";
+      }
+      function memoryRecall() {
+        document.getElementById("text").value = memory;
+      }
+      function memoryClear() {
+        memory = 0;
+      }
+
+      function filterInput(event) {
+        const allowedKeys = [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "+",
+          "-",
+          "*",
+          "/",
+          "Backspace",
+          "Delete",
+          "ArrowLeft",
+          "ArrowRight",
+        ];
+        if (!allowedKeys.includes(event.key)) {
+          event.preventDefault();
+        }
+      }
     </script>
   </head>
   <body>
     <table>
-      <textarea id="text" readonly placeholder="Enter Here! "></textarea>
+      <textarea
+        id="text"
+        readonly
+        placeholder="Enter Here!"
+        onkeydown="filterInput(event)"
+      ></textarea>
       <tr class="chocolate">
         <td><input type="button" value="+" onclick="dis('+')" /></td>
         <td><input type="button" value="-" onclick="dis('+')" /></td>
@@ -103,6 +170,17 @@
         <td><input type="button" value="0" onclick="dis('0')" /></td>
         <td><input type="button" value="." onclick="dis('.')" /></td>
         <td><input type="button" value="AC" onclick="clr()" /></td>
+      </tr>
+      <tr class="darkgrey">
+        <td><input type="button" value="√" onclick="sqrt()" /></td>
+        <td><input type="button" value="%" onclick="percent()" /></td>
+        <td><input type="button" value="±" onclick="changeSign()" /></td>
+        <td><input type="button" value="M+" onclick="memoryStore()" /></td>
+      </tr>
+      <tr class="darkgrey">
+        <td><input type="button" value="MR" onclick="memoryRecall()" /></td>
+        <td><input type="button" value="MC" onclick="memoryClear()" /></td>
+        <td colspan="2"></td>
       </tr>
     </table>
   </body>
